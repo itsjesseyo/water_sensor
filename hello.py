@@ -6,12 +6,14 @@ sockets = Sockets(app)
 
 @sockets.route('/echo')
 def echo_socket(ws):
+	print 'something echoed'
     while not ws.closed:
         message = ws.receive()
         ws.send(message)
 
 @app.route('/')
 def hello():
+	print 'something helloed'
     return 'Hello World!'
 
 
