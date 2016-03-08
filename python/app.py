@@ -39,7 +39,7 @@ socketio = SocketIO(app)
 ######################################################
 
 #hacking together a barebones angular example from this : https://realpython.com/blog/python/flask-by-example-integrating-flask-and-angularjs/
-@app.route('/')
+@app.route('/home')
 def index():
 	return render_template('angular_with_sockets.html')
 
