@@ -97,17 +97,17 @@ def connect():
 @socketio.on('connection')
 def connection(message):
 	print 'someone has joined the server'
-	if json['data'] not in client_list:
-		client_list.append(json['data'])
+	if message not in client_list:
+		client_list.append(message)
 	emit('broadcast_client_list', client_list, broadcast=True)
 
-# this will come from client
-@socketio.on('ping_server')
-def ping_server(json):
-	print('client says: ' + str(json))
-	if json['data'] not in client_list:
-		client_list.append(json['data'])
-	emit('broadcast_client_list', client_list, broadcast=True)
+# # this will come from client
+# @socketio.on('ping_server')
+# def ping_server(json):
+# 	print('client says: ' + str(json))
+# 	if json['data'] not in client_list:
+# 		client_list.append(json['data'])
+# 	emit('broadcast_client_list', client_list, broadcast=True)
 
 # this will come from client
 @socketio.on('receiving_sensor_update')

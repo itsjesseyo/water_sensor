@@ -20,7 +20,7 @@
 		//the downside is you have to track your special html attributes
 		$scope.PingButtonClicked = function(){
 			console.log("button clicked");
-			socket.emit('ping_server', {data: 'frank the website'});
+			socket.emit('connection', 'frank the website');
 		};
 
 		$scope.FakeATime = function(){
