@@ -49,7 +49,7 @@ def angular_filter(value):
 
 app.jinja_env.undefined = TriangleUndefined
 app.jinja_env.filters['angular'] = angular_filter
-socketio = SocketIO(app, allow_upgrades=True, cookie=None, http_compression=False)
+socketio = SocketIO(app, allow_upgrades=True, cookie=None, http_compression=False, engineio_logger=True)
 
 ######################################################
 #################### EXAMPLES ########################
