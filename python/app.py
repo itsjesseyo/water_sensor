@@ -43,7 +43,7 @@ def angular_filter(value):
 		return '{{{{{}}}}}'.format(value._undefined_name)
 	if type(value) is bool:
 		value = repr(value).lower()
-	print 'angualr filter'
+	print('angualr filter')
 	return '{{{{{}}}}}'.format(value)
 
 
@@ -91,12 +91,12 @@ def index():
 
 @socketio.on('connect')
 def connect():
-	print 'someone has joined the server'
+	print('someone has joined the server')
 
 
 @socketio.on('connection')
 def connection(message):
-	print 'someone has joined the server'
+	print('someone has joined the server')
 	if message not in client_list:
 		client_list.append(message)
 	emit('broadcast_client_list', client_list, broadcast=True)
