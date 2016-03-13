@@ -89,6 +89,11 @@ client_list = []
 def index():
 	return render_template('angular_with_sockets.html')
 
+#dont want to send a long webpage to microcontrollers
+@app.route('/')
+def micro():
+	return render_template('micro.html')
+
 @socketio.on('connect')
 def connect():
 	print('someone has joined the server')
